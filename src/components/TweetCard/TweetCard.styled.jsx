@@ -1,12 +1,13 @@
 import styled from "@emotion/styled";
 
-const CardWrapper = styled.div`
+const CardWrapper = styled.li`
 position: relative;
-width: 380px;
+min-width: 380px;
 height: 460px;
 background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
 box-shadow: -3px 7px 21px rgba(0, 0, 0, 0.23);
 border-radius: 20px;
+margin: 20px;
 `
 const Wrapper = styled.div`
 display: flex;
@@ -28,6 +29,7 @@ left: 36px;
 width: 308px;
 height: 168px;
 `
+
 const UserWrapper = styled.div`
 position: relative;
 width: 100%;
@@ -50,6 +52,8 @@ margin-bottom: 62px;
 `
 const AvatarWrapper = styled.div`
 position: absolute;
+display: flex;
+justify-content: center;
 top: -40px;
 left: 150px;
 box-sizing: border-box;
@@ -60,6 +64,13 @@ border: 9px solid #EBD8FF;
 overflow: hidden;
 box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), inset 0px -2.19582px 4.39163px #AE7BE3, inset 0px 4.39163px 3.29372px #FBF8FF;
 `
+
+const Avatar = styled.img`
+display: block;
+width: 80px;
+max-height: 100%;
+`
+
 const UserInfo = styled.p`
 font-weight: 500;
 font-size: 20px;
@@ -86,9 +97,8 @@ text-transform: uppercase;
 color: #373737;
 margin-top: 26px;
 
-:hover,
-:focus{
+&:hover{
 background-color: #75B79F;
 }
 `
-export {CardWrapper, Wrapper,Logo, AvatarWrapper, BgImg, UserInfo, UserWrapper, DecorLine, Button }
+export {CardWrapper, Wrapper,Logo, AvatarWrapper, Avatar, BgImg, UserInfo, UserWrapper, DecorLine, Button }

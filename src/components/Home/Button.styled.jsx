@@ -1,12 +1,6 @@
 import styled from "@emotion/styled";
-
-export const Cards = styled.ul`
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-padding: 40px 150px;
-`
-export const Button = styled.button`
+import { Link } from "react-router-dom";
+export const Button = styled(Link)`
 display: flex;
 justify-content: center;
 align-items: center;
@@ -19,13 +13,17 @@ border-radius: 10px;
 border: none;
 cursor: pointer;
 font-weight: 600;
-font-size: 18px;
+font-size: 22px;
 line-height: 22px;
 text-transform: uppercase;
 color: #373737;
 margin: 0 auto;
-&:hover{
-background-color: #75B79F;
-}
+margin-top: 40px;
+text-decoration: none;
 
+&:hover,
+&:focus{
+background-color: #5432A0;
+color: #fff;
+}
 `

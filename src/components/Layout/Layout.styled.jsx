@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
  export const Container = styled.div`
     min-height: 100vh;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 
     `
    export const Logo = styled(FaRetweet)`
@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
     `
     export const Header = styled.header`
     width: 100%;
-    padding: 20px 150px;
+    padding: 20px 200px;
     background-color: #5432A0;
     `
     
