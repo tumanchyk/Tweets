@@ -249,4 +249,4 @@ fill: currentColor;
     width: 100%;
     padding: 20px 200px;
     background-color: #5432A0;
-    `,P1=()=>T.jsxs(S1,{children:[T.jsx(C1,{children:T.jsxs(k1,{to:"/",children:[T.jsx(E1,{}),"Tweets"]})}),T.jsx(P.Suspense,{children:T.jsx(N0,{})})]});function _1(){return T.jsx(T0,{children:T.jsxs(nr,{path:"/",element:T.jsx(P1,{}),children:[T.jsx(nr,{index:!0,element:T.jsx(Ja,{})}),T.jsx(nr,{path:"/tweets",element:T.jsx(w1,{})}),T.jsx(nr,{path:"*",element:T.jsx(Ja,{})})]})})}pl.createRoot(document.getElementById("root")).render(T.jsx(ut.StrictMode,{children:T.jsx(j0,{children:T.jsx(_1,{})})}));
+    `,P1=()=>T.jsxs(S1,{children:[T.jsx(C1,{children:T.jsxs(k1,{to:"/",children:[T.jsx(E1,{}),"Tweets"]})}),T.jsx(P.Suspense,{children:T.jsx(N0,{})})]});function _1(){return T.jsx(T0,{children:T.jsxs(nr,{path:"/",element:T.jsx(P1,{}),children:[T.jsx(nr,{index:!0,element:T.jsx(Ja,{})}),T.jsx(nr,{path:"/tweets",element:T.jsx(w1,{})}),T.jsx(nr,{path:"*",element:T.jsx(Ja,{})})]})})}pl.createRoot(document.getElementById("root")).render(T.jsx(ut.StrictMode,{children:T.jsx(j0,{basename:"/Tweets",children:T.jsx(_1,{})})}));
