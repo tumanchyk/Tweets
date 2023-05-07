@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 const CardWrapper = styled.li`
 position: relative;
-min-width: 380px;
+width: 380px;
 height: 460px;
 background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
 box-shadow: -3px 7px 21px rgba(0, 0, 0, 0.23);

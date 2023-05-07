@@ -1,35 +1,46 @@
 import { useEffect, useState } from "react";
 import { CardWrapper, Wrapper, Logo, AvatarWrapper, BgImg, UserInfo, UserWrapper, DecorLine, Button, Avatar  } from "./TweetCard.styled"
-import logo from '/images/logo.png';
-import decorate from '/images/decorate.png';
+import logo from '../../images/logo.png'
+import decorate from '../../images/decorate.png';
 import { formatNum } from "../../utiles/formatNumFunc";
 export const TweetCard = ({item}) =>{
 const [userInfo, setUserInfo] = useState(item);
 
-// const [followed, setFollowed] = useState([]);
-// useEffect(()=>{
-// const savedFollowed = JSON.parse(window.localStorage.getItem('Followed users')) ?? []
+const [followed, setFollowed] = useState([]);
 
-// if(savedFollowed) {
-//   setFavorite(savedFollowed);
-// }
-// }, [])
+useEffect(()=>{
+const savedFollowed = JSON.parse(window.localStorage.getItem('FollowedUsers')) ?? []
+
+if(savedFollowed) {
+  setFollowed(savedFollowed);
+}
+}, [])
+
+useEffect(() =>{
+    if(followed.length){
+       window.localStorage.setItem('FollowedUsers', JSON.stringify(followed)) 
+    }
+}, [followed])
 
 
 
 const { tweets, followers, avatar, user } = userInfo;
 
-    const onBtnClick = (e) =>{
+    const onBtnClick = () =>{
+        if(followed.some(el => el.id === item.id)){
+            if(item.id === followed[0].id && followed.length === 1){
+               window.localStorage.removeItem('FollowedUsers')
+            }
+            const filtered = followed.filter(elem => elem.id !== item.id);
+            setFollowed([...filtered])
+            return
+         } 
         
-        const btn = e.currentTarget;
-        if(btn.textContent === 'Follow'){
-            btn.textContent = 'Following';
-            btn.style.backgroundColor = '#75B79F';
-        } else if(btn.textContent === 'Following'){
-            btn.textContent = 'Follow'
-            btn.style.backgroundColor = '#EBD8FF';
-        }
-        console.log(userInfo.followers);
+         setFollowed([item, ...followed])
+        //  setUserInfo(userInfo.followers + 1)
+         console.log(followers);
+
+       
     }
   
     return(
@@ -46,7 +57,9 @@ const { tweets, followers, avatar, user } = userInfo;
                     <UserInfo style={{marginBottom: 12, fontWeight: 600,}}>{user}</UserInfo>
                     <UserInfo style={{marginBottom: 12}}>{tweets} tweets</UserInfo>
                     <UserInfo>{formatNum(followers)} followers</UserInfo>
-                    <Button onClick={onBtnClick}>Follow</Button>
+                    { followed.some(el => el.user === user) 
+                    ? <Button onClick={onBtnClick} style={{backgroundColor: '#75B79F'}}>Following</Button> 
+                    : <Button onClick={onBtnClick} style={{backgroundColor: '#EBD8FF'}}>Follow</Button> }
                 </UserWrapper>
             </Wrapper>
         </CardWrapper>

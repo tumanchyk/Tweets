@@ -11,3 +11,12 @@ export async function getAllUsers(page=1) {
         console.log(error);
     }
 }
+
+export async function changeUerFollowers(item){
+    try{
+        const {data} = await axios.get(`/users/${item.id}`, {item})
+        return data
+    } catch(error){
+        console.log(error);
+    }
+}
