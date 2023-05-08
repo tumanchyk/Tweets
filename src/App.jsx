@@ -1,9 +1,10 @@
+import { lazy } from 'react';
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { Tweets } from "./pages/Tweets";
 import { Layout } from "./components/Layout/Layout";
-function App() {
+const Home = lazy(()=> import('./pages/Home/Home'));
+const Tweets = lazy(()=> import('./pages/Tweets'));
 
+function App() {
   return (
      <Routes>
        <Route path="/" element={<Layout />}>

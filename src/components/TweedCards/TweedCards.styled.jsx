@@ -6,7 +6,7 @@ justify-content: center;
 flex-wrap: wrap;
 padding: 40px 150px;
 `
-export const Button = styled.button`
+export const LoadButton = styled.button`
 display: flex;
 justify-content: center;
 align-items: center;

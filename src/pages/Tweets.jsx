@@ -1,7 +1,7 @@
 import { TweetCards } from "../components/TweedCards/TweedCards"
-import { ButtonBack, IconBack } from "../components/BtnBack/BtnBack.styled"
+import { ButtonBack, IconBack } from "../components/TweetsPageStyles/BtnBack.styled"
 
-export const Tweets = () =>{
+const Tweets = () =>{
     return(
         <>
             <ButtonBack to={'/'}><IconBack/> Go back</ButtonBack>
@@ -9,3 +9,4 @@ export const Tweets = () =>{
         </>
     )
 }
+export default Tweets

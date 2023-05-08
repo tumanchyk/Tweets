@@ -12,9 +12,9 @@ export async function getAllUsers(page=1) {
     }
 }
 
-export async function changeUerFollowers(item){
+export async function changeUserFollowers(item){
     try{
-        const {data} = await axios.get(`/users/${item.id}`, {item})
+        const {data} = await axios.put(`/users/${item.id}`, {...item})
         return data
     } catch(error){
         console.log(error);
