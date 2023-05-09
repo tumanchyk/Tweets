@@ -4,7 +4,7 @@ export const Cards = styled.ul`
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
-padding: 40px 150px;
+padding: 40px 120px;
 `
 export const LoadButton = styled.button`
 display: flex;

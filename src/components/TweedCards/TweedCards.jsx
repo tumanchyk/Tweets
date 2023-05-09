@@ -61,7 +61,7 @@ export const TweetCards = () =>{
                         isFollowing={followed.some(el => el.id === user.id)}/>) 
                     : null}
             </Cards>
-            {currentPage < 5 ? <LoadButton onClick={handleBtn}>Load More</LoadButton> : null}
+            {currentPage < 6 ? <LoadButton onClick={handleBtn}>Load More</LoadButton> : null}
         </>
     )
 }
