@@ -2,7 +2,7 @@
 
 An application where you can find and follow your favorite heroes from the superhero universe.
 
-Tools: React Toolkits, Axios, Mockapi.io
+Tools: React Toolkits, Axios, Mockapi.io, Vite
 
 This application has 2 pages which I implemented using BrowserRouter.
 
