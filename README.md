@@ -6,7 +6,7 @@ Tools: React Toolkits, Axios, Mockapi.io
 
 This application has 2 pages which I implemented using BrowserRouter.
 
-When you open the "/tweets" page, you can see a collection of 3 cards with users information. Then when you click on the "Download More" button, 3 new cards will appear.
+When you open the "/tweets" page, you can see a collection of 3 cards with users information. Then when you click on the "Load More" button, 3 new cards will appear.
 Pagination is implemented by mokeapi.oi's ability to return the required number of cards.
 
 The cards include a button that opens and unsubscribes a user and shows how the number of followers changes.
