@@ -1,4 +1,4 @@
-import{n as t,L as o,j as e}from"./index-6d5b0b8b.js";const r=t(o)`
+import{n as t,L as o,j as e}from"./index-2f5b3694.js";const r=t(o)`
 display: flex;
 justify-content: center;
 align-items: center;
