@@ -12,6 +12,7 @@ export async function getAllUsers(page=1) {
     }
 }
 
+
 export async function changeUserFollowers(item){
     try{
         const {data} = await axios.put(`/users/${item.id}`, {...item})

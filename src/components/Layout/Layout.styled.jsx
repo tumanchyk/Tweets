@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
     font-weight: 600;
     font-size: 25px;
     color: #fff;
-    width: 1220px;
+    width: 1200px;
     margin: 0 auto;
     `
     export const Header = styled.header`

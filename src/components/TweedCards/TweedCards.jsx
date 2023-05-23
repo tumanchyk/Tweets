@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { Context } from "../../App";
 import { TweetCard } from "../TweetCard/TweetCard";
 import { Cards, LoadButton } from "./TweedCards.styled";
 import { getAllUsers } from "../../services/api";
@@ -8,15 +9,24 @@ export const TweetCards = () =>{
     const [listUsers, setListUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(2);
     const [followed, setFollowed] = useState([]);
+    const { select } = useContext(Context)
 
     useEffect(()=>{
         getAllUsers().then(setListUsers)
+        const savedFollowed = JSON.parse(window.localStorage.getItem('FollowedUsers')) ?? []
+        setFollowed(savedFollowed);
     }, [])
+    
+    useEffect(() => {
+        if (select === 'following') {
+            const savedFollowed = JSON.parse(window.localStorage.getItem('FollowedUsers')) ?? []
+            setListUsers(savedFollowed)
+        }
+        if (select === 'all') {
+            getAllUsers().then(setListUsers)
+        }
+    }, [select])
 
-    useEffect(()=>{
-    const savedFollowed = JSON.parse(window.localStorage.getItem('FollowedUsers')) ?? []
-    setFollowed(savedFollowed);
-    }, [])
 
     useEffect(() => {
         if(followed.length){
@@ -61,7 +71,7 @@ export const TweetCards = () =>{
                         isFollowing={followed.some(el => el.id === user.id)}/>) 
                     : null}
             </Cards>
-            {currentPage < 6 ? <LoadButton onClick={handleBtn}>Load More</LoadButton> : null}
+            {currentPage < 6 && select === 'all' ? <LoadButton onClick={handleBtn}>Load More</LoadButton> : null}
         </>
     )
 }

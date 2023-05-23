@@ -1,10 +1,14 @@
+import SelectElem from "../components/Select/Select"
 import { TweetCards } from "../components/TweedCards/TweedCards"
-import { ButtonBack, IconBack } from "../components/TweetsPageStyles/BtnBack.styled"
+import { ButtonBack, IconBack, Wrapper } from "../components/TweetsPageStyles/BtnBack.styled"
 
 const Tweets = () =>{
     return(
         <>
-            <ButtonBack to={'/'}><IconBack/> Go back</ButtonBack>
+            <Wrapper>
+                <ButtonBack to={'/'}><IconBack/> Go back</ButtonBack>
+                <SelectElem/>
+            </Wrapper>
             <TweetCards/>
         </>
     )
