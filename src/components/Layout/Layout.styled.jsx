@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 
  export const Container = styled.div`
     min-height: 100vh;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     `
    export const Logo = styled(FaRetweet)`
@@ -20,10 +23,12 @@ import { Link } from "react-router-dom";
     font-weight: 600;
     font-size: 25px;
     color: #fff;
+    width: 1220px;
+    margin: 0 auto;
     `
     export const Header = styled.header`
     width: 100%;
-    padding: 20px 200px;
+    padding: 20px 210px;
     background-color: #5432A0;
     `
     

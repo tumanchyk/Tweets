@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from "react";
-import { CardWrapper, Wrapper, Logo, AvatarWrapper, BgImg, UserInfo, UserWrapper, DecorLine, Button, Avatar  } from "./TweetCard.styled"
-import logo from '../../images/logo.png'
-import decorate from '../../images/decorate.png';
+import { CardWrapper, AvatarWrapper, UserInfo, UserWrapper, Button, Avatar  } from "./TweetCard.styled"
 import { formatNum } from "../../utiles/formatNumFunc";
 
 export const TweetCard = ({hero, onClick, isFollowing}) =>{
@@ -11,23 +9,17 @@ export const TweetCard = ({hero, onClick, isFollowing}) =>{
 
     return(
         <CardWrapper>
-            <Logo src={logo} />
-            <BgImg src={decorate}/>           
-            <Wrapper>
-                <UserWrapper>
-                    <DecorLine>
+                <UserWrapper>           
                     <AvatarWrapper>
-                        <Avatar src={avatar}/>
-                    </AvatarWrapper>
-                    </DecorLine>          
-                    <UserInfo style={{marginBottom: 12, fontWeight: 600,}}>{user}</UserInfo>
+                        <Avatar src={avatar} alt='user avatar'/>
+                    </AvatarWrapper>         
+                    <UserInfo style={{marginBottom: 12, marginTop: 62, fontWeight: 600,}}>{user}</UserInfo>
                     <UserInfo style={{marginBottom: 12}}>{tweets} tweets</UserInfo>
                     <UserInfo>{formatNum(userFollowers)} followers</UserInfo>
                     { isFollowing 
-                    ? <Button onClick={() =>{ onClick(hero); setUserFollowers(userFollowers - 1 )}} style={{backgroundColor: '#75B79F'}}>Following</Button> 
-                    : <Button onClick={() =>{ onClick(hero); setUserFollowers(userFollowers + 1 )}} style={{backgroundColor: '#EBD8FF'}}>Follow</Button> }
+                    ? <Button onClick={() =>{ onClick(hero); setUserFollowers(userFollowers - 1 )}} status={true} >Following</Button> 
+                    : <Button onClick={() =>{ onClick(hero); setUserFollowers(userFollowers + 1 )}}  status={false} >Follow</Button> }
                 </UserWrapper>
-            </Wrapper>
         </CardWrapper>
     )
 }

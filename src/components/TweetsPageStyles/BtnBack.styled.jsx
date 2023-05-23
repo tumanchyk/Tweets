@@ -8,7 +8,9 @@ display: flex;
 align-items: center;
 text-decoration: none;
 color: #fff;
-margin: 30px 0 0 200px;
+width: 1220px;
+margin: 0 auto;
+margin-top: 30px;
 &:hover{
   color: #5432A0
 }

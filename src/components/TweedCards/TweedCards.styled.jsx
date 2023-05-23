@@ -4,7 +4,9 @@ export const Cards = styled.ul`
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
-padding: 40px 120px;
+width: 1220px;
+margin: 0 auto;
+margin: 20px -20px 20px -20px;
 `
 export const LoadButton = styled.button`
 display: flex;
@@ -26,6 +28,7 @@ color: #373737;
 margin: 0 auto;
 &:hover{
 background-color: #75B79F;
+color: #fff;
 }
 
 `
